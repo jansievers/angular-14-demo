@@ -2,11 +2,17 @@ import { Component, VERSION } from '@angular/core';
 import {
   FormControl,
   FormGroup,
+  ReactiveFormsModule,
   UntypedFormControl,
   UntypedFormGroup,
 } from '@angular/forms';
 
 @Component({
+  // Standalone Component (syntax could change in the future)
+  standalone: true,
+  imports: [ReactiveFormsModule],
+  providers: [],
+
   selector: 'my-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
@@ -22,6 +28,7 @@ export class AppComponent {
 
   /*
   // Fallback (when updating existing app to 14):
+  // $ ng update should replace this automatically
 
   public form = new UntypedFormGroup({
     email: new UntypedFormControl(null),
